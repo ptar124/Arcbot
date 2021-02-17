@@ -574,14 +574,14 @@ async def cuslist(ctx, *, arg):
                 elif oparg == "<":
                     x = 0
                     while x < len(customlist):
-                        if customlist[x].getpstdiff() > diffarg:
+                        if customlist[x].getpstdiff() >= diffarg:
                             customlist.pop(x)
                         else:
                             x = x+1
                 elif oparg == ">":
                     x = 0
                     while x < len(customlist):
-                        if customlist[x].getpstdiff() < diffarg:
+                        if customlist[x].getpstdiff() <= diffarg:
                             customlist.pop(x)
                         else:
                             x = x+1
@@ -596,14 +596,14 @@ async def cuslist(ctx, *, arg):
                 elif oparg == "<":
                     x = 0
                     while x < len(customlist):
-                        if customlist[x].getprsdiff() > diffarg:
+                        if customlist[x].getprsdiff() >= diffarg:
                             customlist.pop(x)
                         else:
                             x = x+1
                 elif oparg == ">":
                     x = 0
                     while x < len(customlist):
-                        if customlist[x].getprsdiff() < diffarg:
+                        if customlist[x].getprsdiff() <= diffarg:
                             customlist.pop(x)
                         else:
                             x = x+1
@@ -618,14 +618,14 @@ async def cuslist(ctx, *, arg):
                 elif oparg == "<":
                     x = 0
                     while x < len(customlist):
-                        if customlist[x].getftrdiff() > diffarg:
+                        if customlist[x].getftrdiff() >= diffarg:
                             customlist.pop(x)
                         else:
                             x = x+1
                 elif oparg == ">":
                     x = 0
                     while x < len(customlist):
-                        if customlist[x].getftrdiff() < diffarg:
+                        if customlist[x].getftrdiff() <= diffarg:
                             customlist.pop(x)
                         else:
                             x = x+1
@@ -642,14 +642,14 @@ async def cuslist(ctx, *, arg):
                 elif oparg == "<":
                     x = 0
                     while x < len(customlist):
-                        if customlist[x].getbyddiff() > diffarg:
+                        if customlist[x].getbyddiff() >= diffarg:
                             customlist.pop(x)
                         else:
                             x = x+1
                 elif oparg == ">":
                     x = 0
                     while x < len(customlist):
-                        if customlist[x].getbyddiff() < diffarg:
+                        if customlist[x].getbyddiff() <= diffarg:
                             customlist.pop(x)
                         else:
                             x = x+1
