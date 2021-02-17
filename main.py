@@ -642,7 +642,7 @@ async def cuslist(ctx, *, arg):
                 elif oparg == "<":
                     x = 0
                     while x < len(customlist):
-                        if customlist[x].getbyddiff() >= diffarg and customlist[x].getbyddiff() < 1:
+                        if customlist[x].getbyddiff() >= diffarg or customlist[x].getbyddiff() < 1:
                             customlist.pop(x)
                         else:
                             x = x+1
