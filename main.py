@@ -179,7 +179,7 @@ song158 = Song("Lost Desire", 4, 7, 9.7, 0)
 song159 = Song("Dantalion", 5, 8, 10.7, 0)
 song160 = Song("#1f1e33", 5, 9, 10.7, 0)
 song161 = Song("Tempestissimo", 6, 9, 10, 11)
-song162 = Song("Arcahv", 4, 7, 10, 0)
+song162 = Song("Arcahv", 4, 7, 9.7, 0)
 
 #CS Pack
 song25 = Song("Paradise", 1, 4, 7, 0)
