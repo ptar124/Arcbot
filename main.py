@@ -538,9 +538,25 @@ async def cuslist(ctx, *, arg):
         if arg.startswith("dup", 3):
             customlist = list(set(customlist))
             await ctx.channel.send("Duplicate elements removed")
-        else:
-            await ctx.channel.send("Removing individual songs is not yet implemented")
 
+        elif arg[3:].isnumeric():
+            await ctx.channel.send("Removed ``" + customlist[int(arg[3:])-1].gettitle() + "`` from custom list")
+            customlist.pop(int(arg[3:])-1)
+        else:
+            await ctx.channel.send("Invalid song number")
+
+    elif arg == "view":
+        customlistview = "**Current song list:** ```"
+        for x in range(len(customlist)):
+            customlistview = customlistview + str(x+1) + ". " + customlist[x].gettitle() + " \n"
+        customlistview = customlistview + "``` To remove songs, use ``cuslist rm [song number]``"
+
+        if len(customlistview) > 1999:
+            await ctx.channel.send("Your song list exceeds Discord's character limit and cannot be viewed")           
+        elif customlist == []:
+            await ctx.channel.send("You can't view an empty list!")
+        else:
+            await ctx.channel.send(customlistview)
 
     elif arg.startswith("addpack"):
         if arg.startswith("all", 8):
