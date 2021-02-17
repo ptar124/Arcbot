@@ -5,7 +5,7 @@ import os
 import random
 
 #bot = discord.Client()
-bot = commands.Bot(command_prefix = "$")
+bot = commands.Bot(command_prefix = "!")
 class Song:
     title = ""
     pstdiff = 0
@@ -557,6 +557,110 @@ async def cuslist(ctx, *, arg):
             await ctx.channel.send("You can't view an empty list!")
         else:
             await ctx.channel.send(customlistview)
+    
+    elif arg.startswith("filter"):
+        oparg = str(arg[11:12])
+        diffarg = float(arg[13:])
+
+        if diffarg > 0 and diffarg < 12:
+            if arg.startswith("pst", 7):
+                if oparg == "=":
+                    x = 0
+                    while x < len(customlist):
+                        if customlist[x].getpstdiff() != diffarg:
+                            customlist.pop(x)
+                        else:
+                            x = x+1
+                elif oparg == ">":
+                    x = 0
+                    while x < len(customlist):
+                        if customlist[x].getpstdiff() > diffarg:
+                            customlist.pop(x)
+                        else:
+                            x = x+1
+                elif oparg == "<":
+                    x = 0
+                    while x < len(customlist):
+                        if customlist[x].getpstdiff() < diffarg:
+                            customlist.pop(x)
+                        else:
+                            x = x+1
+            elif arg.startswith("prs", 7):
+                if oparg == "=":
+                    x = 0
+                    while x < len(customlist):
+                        if customlist[x].getprsdiff() != diffarg:
+                            customlist.pop(x)
+                        else:
+                            x = x+1
+                elif oparg == ">":
+                    x = 0
+                    while x < len(customlist):
+                        if customlist[x].getprsdiff() > diffarg:
+                            customlist.pop(x)
+                        else:
+                            x = x+1
+                elif oparg == "<":
+                    x = 0
+                    while x < len(customlist):
+                        if customlist[x].getprsdiff() < diffarg:
+                            customlist.pop(x)
+                        else:
+                            x = x+1
+            elif arg.startswith("ftr", 7):
+                if oparg == "=":
+                    x = 0
+                    while x < len(customlist):
+                        if customlist[x].getftrdiff() != diffarg:
+                            customlist.pop(x)
+                        else:
+                            x = x+1
+                elif oparg == ">":
+                    x = 0
+                    while x < len(customlist):
+                        if customlist[x].getftrdiff() > diffarg:
+                            customlist.pop(x)
+                        else:
+                            x = x+1
+                elif oparg == "<":
+                    x = 0
+                    while x < len(customlist):
+                        if customlist[x].getftrdiff() < diffarg:
+                            customlist.pop(x)
+                        else:
+                            x = x+1
+                else:
+                    await ctx.channel.send("Invalid difficulty, level, or operation")
+            elif arg.startswith("byd", 7):
+                if oparg == "=":
+                    x = 0
+                    while x < len(customlist):
+                        if customlist[x].getbyddiff() != diffarg:
+                            customlist.pop(x)
+                        else:
+                            x = x+1
+                elif oparg == ">":
+                    x = 0
+                    while x < len(customlist):
+                        if customlist[x].getbyddiff() > diffarg:
+                            customlist.pop(x)
+                        else:
+                            x = x+1
+                elif oparg == "<":
+                    x = 0
+                    while x < len(customlist):
+                        if customlist[x].getbyddiff() < diffarg:
+                            customlist.pop(x)
+                        else:
+                            x = x+1
+            else:
+                await ctx.channel.send("Invalid difficulty, level, or operation")
+
+            await ctx.channel.send("Applied Filter: " + arg[7:10] + " " + oparg + " " + str(diffarg) + "\n **This feature is still experimental, please double check the list**")
+
+        else:
+            await ctx.channel.send("Invalid difficulty, level, or operation")
+
 
     elif arg.startswith("addpack"):
         if arg.startswith("all", 8):
