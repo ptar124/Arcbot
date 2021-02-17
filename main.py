@@ -642,7 +642,7 @@ async def cuslist(ctx, *, arg):
                 elif oparg == "<":
                     x = 0
                     while x < len(customlist):
-                        if customlist[x].getbyddiff() >= diffarg:
+                        if customlist[x].getbyddiff() >= diffarg and customlist[x].getbyddiff() < 1:
                             customlist.pop(x)
                         else:
                             x = x+1
@@ -656,7 +656,7 @@ async def cuslist(ctx, *, arg):
             else:
                 await ctx.channel.send("Invalid difficulty, level, or operation")
 
-            await ctx.channel.send("Applied Filter: " + arg[7:10] + " " + oparg + " " + str(diffarg) + "\n **This feature is still experimental, please double check the list**")
+            await ctx.channel.send("Applied Filter: " + arg[7:10] + " " + oparg + " " + str(diffarg) + "\n**This feature is still experimental, please double check the list**")
 
         else:
             await ctx.channel.send("Invalid difficulty, level, or operation")
