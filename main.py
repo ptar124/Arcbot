@@ -5,7 +5,7 @@ import os
 import random
 
 #bot = discord.Client()
-bot = commands.Bot(command_prefix = "!")
+bot = commands.Bot(command_prefix = "$")
 class Song:
     title = ""
     pstdiff = 0
