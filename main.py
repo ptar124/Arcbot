@@ -6,6 +6,8 @@ import random
 
 #bot = discord.Client()
 bot = commands.Bot(command_prefix = "$")
+#bot.remove_command('help')
+
 class Song:
     title = ""
     pstdiff = 0
@@ -773,7 +775,7 @@ async def cuslist(ctx, *, arg):
             print("All Lanota Songs added to custom list")
             await ctx.channel.send("All Lanota Songs added to custom list")
 
-        elif arg.startswith("dyn", 8):
+        elif arg.startswith("dnx", 8):
             customlist = customlist + adversepreludelist
             print("All Dynamix Songs added to custom list")
             await ctx.channel.send("All Dynamix Songs added to custom list")
@@ -784,5 +786,17 @@ async def cuslist(ctx, *, arg):
         print("Invalid argument for command $cuslist")
         await ctx.channel.send('Invalid argument for command $cuslist')
 
+@bot.command()
+async def help (ctx, arg = ""):
+    helpstr = ""
+    if arg == "rand":
+        await ctx.channel.send("``rand [pack]`` - Randomizes songs from a specific pack. The  ``free`` pack is pre-made for convenience for F2P players.")
+    elif arg == "cuslist":
+        await ctx.channel.send("``cuslist addpack [pack]`` - Add a pack to the custom list, you can add a pack more than once.\n``cuslist rm [int]`` - Remove a song from the list, song number is shown using ``cuslist view``. To remove duplicates, use ``dup`` instead of a number\n``cuslist view`` - View the custom list\n``cuslist reset`` - Reset the custom list to an empty list\n``cuslist filter [difficulty] [operator] [level]`` Filter only specific difficulties, supported operators are ``>``, ``<``, and ``=``. For ``X+`` difficulties, use ``X.7``. **Note the spaces between arguments**")
+    elif arg == "pack":
+        await ctx.channel.send("``all`` - All Songs\n``free`` - All Free Songs (Arcaea + World Extend)\n``ma`` - Memory Archive\n``arc`` - Arcaea\n``we`` - World Extend\n``bf`` - Black Fate\n``ap`` - Adverse Prelude\n``ls`` - Luminous Sky\n``vl`` - Vicious Labyrinth\n``ec`` - Eternal Core\n``sr`` - Sunset Radiance\n``ar`` - Absolute Reason\n``be`` - Binary Enfold\n``av`` - Ambivalent Vision\n``cs`` - Crimson Solace\n``mai`` - maimai\n``ong`` - O.N.G.E.K.I\n``chu`` - CHUNITHM\n``gc`` - Groove Coaster\n``lan`` - Lanota\n``dnx`` - Dynamix\n``cus`` - Custom List")
+    else:
+        helpstr = "Current Arcbot Commands:```rand\ncuslist```"
+        helpstr = helpstr + "For more information on each command, type ``$help [command] or for pack abbrieviations, type ``$help pack``"
 keep_alive()
 bot.run(os.getenv('TOKEN'))
