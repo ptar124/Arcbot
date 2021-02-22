@@ -547,16 +547,36 @@ async def cuslist(ctx, *, arg):
         else:
             await ctx.channel.send("Invalid song number")
 
-    elif arg == "view":
+    elif arg[0:4] == "view":
         customlistview = "**Current song list:** ```"
-        for x in range(len(customlist)):
-            customlistview = customlistview + str(x+1) + ". " + customlist[x].gettitle() + " \n"
+        customlistview2 = "**Current song list:** ```"
+        customlistview3 = "**Current song list:** ```"
+        x = 0
+        while x < len(customlist):
+            if len(customlistview) < 1800:
+               customlistview = customlistview + str(x+1) + ". " + customlist[x].gettitle() + " \n"
+            else:
+                if len(customlistview2) < 1800:
+                    customlistview2 = customlistview2 + str(x+1) + ". " + customlist[x].gettitle() + " \n"
+                else:
+                    customlistview3 = customlistview3 + str(x+1) + ". " + customlist[x].gettitle() + " \n"
+            x = x+1
+                
         customlistview = customlistview + "``` To remove songs, use ``cuslist rm [song number]``"
+        customlistview2 = customlistview2 + "``` To remove songs, use ``cuslist rm [song number]``"
+        customlistview3 = customlistview3 + "``` To remove songs, use ``cuslist rm [song number]``"
 
-        if len(customlistview) > 1999:
-            await ctx.channel.send("Your song list exceeds Discord's character limit and cannot be viewed")           
-        elif customlist == []:
+        if len(customlistview2) != len(customlistview3):
+            await ctx.channel.send("The list exceeds Discord's character limit and has been truncated. Use ``cuslist view [page number]``")
+        
+        if customlist == []:
             await ctx.channel.send("You can't view an empty list!")
+
+        elif arg.startswith("2", 5):
+            await ctx.channel.send(customlistview2)
+
+        elif arg.startswith("3", 5):
+            await ctx.channel.send(customlistview3)
         else:
             await ctx.channel.send(customlistview)
     
@@ -787,7 +807,7 @@ async def cuslist(ctx, *, arg):
         await ctx.channel.send('Invalid argument for command $cuslist')
 
 @bot.command()
-async def help (ctx, arg = "default"):
+async def help (ctx, arg = ""):
     helpstr = ""
     if arg == "rand":
         await ctx.channel.send("``rand [pack]`` - Randomizes songs from a specific pack. The  ``free`` pack is pre-made for convenience for F2P players.")
@@ -796,7 +816,8 @@ async def help (ctx, arg = "default"):
     elif arg == "pack":
         await ctx.channel.send("``all`` - All Songs\n``free`` - All Free Songs (Arcaea + World Extend)\n``ma`` - Memory Archive\n``arc`` - Arcaea\n``we`` - World Extend\n``bf`` - Black Fate\n``ap`` - Adverse Prelude\n``ls`` - Luminous Sky\n``vl`` - Vicious Labyrinth\n``ec`` - Eternal Core\n``sr`` - Sunset Radiance\n``ar`` - Absolute Reason\n``be`` - Binary Enfold\n``av`` - Ambivalent Vision\n``cs`` - Crimson Solace\n``mai`` - maimai\n``ong`` - O.N.G.E.K.I\n``chu`` - CHUNITHM\n``gc`` - Groove Coaster\n``lan`` - Lanota\n``dnx`` - Dynamix\n``cus`` - Custom List")
     else:
-        helpstr = "Current Arcbot Commands:```rand\ncuslist```"
-        helpstr = helpstr + "For more information on each command, type ``$help [command] or for pack abbrieviations, type ``$help pack``"
+        helpstr = "Current Arcbot Commands:```\nrand\ncuslist```"
+        helpstr = helpstr + "For more information on each command, type ``$help [command]`` or for pack abbrieviations, type ``$help pack``"
+        await ctx.channel.send(helpstr)
 keep_alive()
 bot.run(os.getenv('TOKEN'))
