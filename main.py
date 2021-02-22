@@ -6,7 +6,7 @@ import random
 
 #bot = discord.Client()
 bot = commands.Bot(command_prefix = "$")
-#bot.remove_command('help')
+bot.remove_command('help')
 
 class Song:
     title = ""
@@ -787,7 +787,7 @@ async def cuslist(ctx, *, arg):
         await ctx.channel.send('Invalid argument for command $cuslist')
 
 @bot.command()
-async def help (ctx, arg = ""):
+async def help (ctx, arg = "default"):
     helpstr = ""
     if arg == "rand":
         await ctx.channel.send("``rand [pack]`` - Randomizes songs from a specific pack. The  ``free`` pack is pre-made for convenience for F2P players.")
