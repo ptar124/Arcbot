@@ -139,6 +139,7 @@ song178 = Song("Galaxy Friends", 3, 6, 9.7, 0)
 song181 = Song("Xeraphinite", 3, 7, 9.7, 0)
 song182 = Song("Xanatos", 4, 7, 10, 0)
 song203 = Song("AttraqtiA", 4, 7, 10, 0)
+song207 = Song("GIMME DA BLOOD", 3, 7, 10, 0)
 
 #EC Pack
 song12 = Song("cry of viyella", 3, 6, 8, 0)
@@ -282,7 +283,7 @@ song199 = Song("AMAZING MIGHTYYYY!!!!", 4, 7, 10.7, 0)
 choice = [0, 0, 0]
 picked = ["", "", ""]
 
-memoryarchivelist = [song32, song33, song34, song42, song49, song51, song61, song62, song70, song77, song78, song80, song82, song93, song94, song97, song104, song105, song106, song112, song123, song127, song137, song142, song144, song145, song146, song147, song148, song149, song150, song154, song168, song170, song171, song172, song173, song174, song175, song177, song178, song181, song182, song203]
+memoryarchivelist = [song32, song33, song34, song42, song49, song51, song61, song62, song70, song77, song78, song80, song82, song93, song94, song97, song104, song105, song106, song112, song123, song127, song137, song142, song144, song145, song146, song147, song148, song149, song150, song154, song168, song170, song171, song172, song173, song174, song175, song177, song178, song181, song182, song203, song207]
 
 arcaealist = [song1, song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song20, song21, song22, song23, song24, song30, song31, song35, song41, song43, song50, song52, song53, song54, song63, song64, song71, song79, song81, song83, song84, song85, song92, song95, song96, song103, song114, song115, song121, song122, song138, song139, song141, song143, song151, song153]
 
