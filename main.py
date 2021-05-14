@@ -40,7 +40,7 @@ song5 = Song("Lucifer", 3, 5, 8, 0)
 song6 = Song("Snow White", 2, 5, 8, 0)
 song7 = Song("Shades of Light in a Transcendent Realm", 3, 6, 8, 0)
 song8 = Song("Babaroque", 3, 6, 8, 0)
-song9 = Song("Lost Civilisation", 4, 7, 9, 0)
+song9 = Song("Lost Civilisation", 4, 7, 9, 9.7)
 song10 = Song("GOODTEK (Arcaea Edit)", 4, 6, 9, 9.7)
 song11 = Song("qualia -ideaesthesia-", 4, 7, 9, 0)
 song20 = Song("Dement ~after legend~", 3, 6, 7, 9.7)
@@ -92,7 +92,9 @@ song180 = Song("Lapis", 2, 6, 9, 0)
 song188 = Song("Purple Verse", 4, 7, 9, 0)
 song204 = Song("Glow", 4, 7, 9, 0)
 song205 = Song("enchanted love", 2, 4, 8, 0)
-song206 = Song ("Bamboo", 3, 6, 9.7, 0)
+song206 = Song("Bamboo", 3, 6, 9.7, 0)
+song209 = Song("Life is PIANO", 3, 5, 9, 0)
+song218 = Song("Vandalism", 3, 6, 9.7, 0)
 
 #MA Pack
 song32 = Song("DataErr0r", 3, 7, 9, 0)
@@ -140,6 +142,7 @@ song181 = Song("Xeraphinite", 3, 7, 9.7, 0)
 song182 = Song("Xanatos", 4, 7, 10, 0)
 song203 = Song("AttraqtiA", 4, 7, 10, 0)
 song207 = Song("GIMME DA BLOOD", 3, 7, 10, 0)
+song208 = Song("Bassline Yatteru? w", 3, 6, 9, 0)
 
 #EC Pack
 song12 = Song("cry of viyella", 3, 6, 8, 0)
@@ -231,6 +234,17 @@ song189 = Song("Beside You", 2, 6, 8, 0)
 song190 = Song("Heart Jackin’", 3, 5, 9.7, 0)
 song191 = Song("To: Alice Liddell", 4, 7, 10, 0)
 
+#EO Pack
+song210 = Song("Paper Witch", 2, 5, 8, 0)
+song211 = Song("Crystal Gravity", 3, 6, 9 ,0)
+song212 = Song("Far Away Light", 4, 7, 9.7, 0)
+song213 = Song("Löschen", 3, 7, 10, 0)
+song214 = Song("Aegleseeker", 5, 8, 11, 0)
+#EO Append
+song215 = Song("Coastal Highway", 3, 6, 8, 0)
+song216 = Song("ΟΔΥΣΣΕΙΑ", 4, 7, 9, 0)
+song217 = Song("Overwhelm", 5, 8, 10, 0)
+
 #DNX Pack
 song36 = Song("Moonlight of Sand Castle", 1, 5, 7, 0)
 song37 = Song("REconstruction", 2, 6, 8, 0)
@@ -283,11 +297,11 @@ song199 = Song("AMAZING MIGHTYYYY!!!!", 4, 7, 10.7, 0)
 choice = [0, 0, 0]
 picked = ["", "", ""]
 
-memoryarchivelist = [song32, song33, song34, song42, song49, song51, song61, song62, song70, song77, song78, song80, song82, song93, song94, song97, song104, song105, song106, song112, song123, song127, song137, song142, song144, song145, song146, song147, song148, song149, song150, song154, song168, song170, song171, song172, song173, song174, song175, song177, song178, song181, song182, song203, song207]
+memoryarchivelist = [song32, song33, song34, song42, song49, song51, song61, song62, song70, song77, song78, song80, song82, song93, song94, song97, song104, song105, song106, song112, song123, song127, song137, song142, song144, song145, song146, song147, song148, song149, song150, song154, song168, song170, song171, song172, song173, song174, song175, song177, song178, song181, song182, song203, song207, song208]
 
 arcaealist = [song1, song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song20, song21, song22, song23, song24, song30, song31, song35, song41, song43, song50, song52, song53, song54, song63, song64, song71, song79, song81, song83, song84, song85, song92, song95, song96, song103, song114, song115, song121, song122, song138, song139, song141, song143, song151, song153]
 
-worldextendlist = [song163, song164, song165, song166, song167, song169, song179, song180, song188, song204, song205, song206]
+worldextendlist = [song163, song164, song165, song166, song167, song169, song179, song180, song188, song204, song205, song206, song209, song218]
 
 blackfatelist = [song156, song157, song158, song159, song160, song161, song162]
 
@@ -310,6 +324,8 @@ binaryenfoldlist = [song72, song73, song74, song75, song76]
 ambivalentvisionlist = [song44, song45, song46, song47, song48, song155]
 
 crimsonsolacelist = [song25, song26, song27, song28, song29, song140]
+
+esotericorderlist = [song210, song211, song212, song213, song214, song215, song216, song217]
 
 maimailist = [song196, song197, song198, song199]
 
@@ -356,6 +372,7 @@ async def rand(ctx, arg):
     global binaryenfoldlist
     global ambivalentvisionlist
     global crimsonsolacelist
+    global esotericorderlist
     global maimailist
     global ongekilist
     global chunithmlist
@@ -449,6 +466,11 @@ async def rand(ctx, arg):
         await ctx.channel.send('Random Crimson Solace Songs')
         thislist = crimsonsolacelist
 
+    elif arg == "eo":
+        print("Ramdom Esoteric Order Songs")
+        await ctx.channel.send('Random Esoteric Order Songs')
+        thislist = esotericorderlist
+
     elif arg == "mai":
         print("Random maimai Songs")
         await ctx.channel.send('Random maimai Songs')
@@ -503,7 +525,7 @@ async def rand(ctx, arg):
                 choice[x] = random.randint(0,len(thislist)-1)
         picked[x] = thislist[choice[x]].gettitle()
 
-    await ctx.channel.send(':one: ' + picked[0] + '\n:two: ' + picked[1] + '\n:three: ' + picked[2] + '\n \n**Currently all append packs are included in their respective main packs**')
+    await ctx.channel.send(':one: ' + picked[0] + '\n:two: ' + picked[1] + '\n:three: ' + picked[2] + "\n \n**Append packs are included in base pack,** remove them using the song list view for now. The '-append' suffix will be implemented later")
 
 @bot.command()
 async def cuslist(ctx, *, arg):
@@ -741,6 +763,11 @@ async def cuslist(ctx, *, arg):
             print("All Ephemeral Page Songs added to custom list")
             await ctx.channel.send("All Ephemeral Page Songs added to custom list")
 
+        elif arg.startswith("eo", 8):
+            customlist = customlist + ephemeralpagelist
+            print("All Esoteric Order Songs added to custom list")
+            await ctx.channel.send("All Esoteric Order Songs added to custom list")
+
         elif arg.startswith("sr", 8):
             customlist = customlist + sunsetradiancelist
             print("All Sunset Radiance Songs added to custom list")
@@ -815,7 +842,7 @@ async def help (ctx, arg = ""):
     elif arg == "cuslist":
         await ctx.channel.send("``cuslist addpack [pack]`` - Add a pack to the custom list, you can add a pack more than once.\n``cuslist rm [int]`` - Remove a song from the list, song number is shown using ``cuslist view``. To remove duplicates, use ``dup`` instead of a number\n``cuslist view`` - View the custom list\n``cuslist reset`` - Reset the custom list to an empty list\n``cuslist filter [difficulty] [operator] [level]`` Filter only specific difficulties, supported operators are ``>``, ``<``, and ``=``. For ``X+`` difficulties, use ``X.7``. **Note the spaces between arguments**")
     elif arg == "pack":
-        await ctx.channel.send("``all`` - All Songs\n``free`` - All Free Songs (Arcaea + World Extend)\n``ma`` - Memory Archive\n``arc`` - Arcaea\n``we`` - World Extend\n``bf`` - Black Fate\n``ap`` - Adverse Prelude\n``ls`` - Luminous Sky\n``vl`` - Vicious Labyrinth\n``ec`` - Eternal Core\n``sr`` - Sunset Radiance\n``ar`` - Absolute Reason\n``be`` - Binary Enfold\n``av`` - Ambivalent Vision\n``cs`` - Crimson Solace\n``mai`` - maimai\n``ong`` - O.N.G.E.K.I\n``chu`` - CHUNITHM\n``gc`` - Groove Coaster\n``lan`` - Lanota\n``dnx`` - Dynamix\n``cus`` - Custom List")
+        await ctx.channel.send("``all`` - All Songs\n``free`` - All Free Songs (Arcaea + World Extend)\n``ma`` - Memory Archive\n``arc`` - Arcaea\n``we`` - World Extend\n``bf`` - Black Fate\n``ap`` - Adverse Prelude\n``ls`` - Luminous Sky\n``vl`` - Vicious Labyrinth\n``ec`` - Eternal Core\n``sr`` - Sunset Radiance\n``ar`` - Absolute Reason\n``be`` - Binary Enfold\n``av`` - Ambivalent Vision\n``cs`` - Crimson Solace\n``ep`` - Ephemeral Page\n``eo`` - Esoteric Order\n``mai`` - maimai\n``ong`` - O.N.G.E.K.I\n``chu`` - CHUNITHM\n``gc`` - Groove Coaster\n``lan`` - Lanota\n``dnx`` - Dynamix\n``cus`` - Custom List")
     else:
         helpstr = "Current Arcbot Commands:```\nrand\ncuslist```"
         helpstr = helpstr + "For more information on each command, type ``$help [command]`` or for pack abbrieviations, type ``$help pack``"
