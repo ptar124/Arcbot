@@ -764,7 +764,7 @@ async def cuslist(ctx, *, arg):
             await ctx.channel.send("All Ephemeral Page Songs added to custom list")
 
         elif arg.startswith("eo", 8):
-            customlist = customlist + ephemeralpagelist
+            customlist = customlist + esotericorderlist
             print("All Esoteric Order Songs added to custom list")
             await ctx.channel.send("All Esoteric Order Songs added to custom list")
 
