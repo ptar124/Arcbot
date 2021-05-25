@@ -341,7 +341,7 @@ lanotalist = [song65, song66, song67, song68, song69]
 
 dynamixlist = [song36, song37, song38, song39, song40]
 
-songlist = memoryarchivelist + arcaealist + worldextendlist + blackfatelist + adversepreludelist + luminousskylist + viciouslabyrinthlist + eternalcorelist + ephemeralpagelist + sunsetradiancelist + absolutereasonlist + binaryenfoldlist + ambivalentvisionlist + crimsonsolacelist + maimailist + ongekilist + chunithmlist + groovecoasterlist + tonespherelist + lanotalist + dynamixlist
+songlist = memoryarchivelist + arcaealist + worldextendlist + blackfatelist + adversepreludelist + luminousskylist + viciouslabyrinthlist + eternalcorelist + ephemeralpagelist + sunsetradiancelist + absolutereasonlist + binaryenfoldlist + ambivalentvisionlist + crimsonsolacelist + esotericorderlist + maimailist + ongekilist + chunithmlist + groovecoasterlist + tonespherelist + lanotalist + dynamixlist
 
 freelist = worldextendlist + arcaealist
 
@@ -834,6 +834,75 @@ async def cuslist(ctx, *, arg):
         print("Invalid argument for command $cuslist")
         await ctx.channel.send('Invalid argument for command $cuslist')
 
+
+@bot.command()
+async def hard(ctx, s, p, f, l):
+    shiny = float(s)
+    pure = float(p) - float(s)
+    far = float(f)
+    lost = float(l)
+    ncount = shiny + pure + far + lost
+    sscore = 10000000/ncount
+    pscore = sscore*(0.6)
+    fscore = sscore*(0.2)
+    total = shiny*sscore + pure*pscore + far*fscore
+    grade = ""
+
+    if total > 10000000:
+        grade = ":place_of_worship: :place_of_worship: :place_of_worship: wait how did you get over 10m, please check your inputs!"
+    elif total == 10000000:
+        grade = ":regional_indicator_m: :regional_indicator_p: :regional_indicator_m: :tada:"
+    elif total >= 9900000:
+        grade = ":regional_indicator_e: :regional_indicator_x: :arrow_double_up:"
+    elif total >= 9800000:
+        grade = ":regional_indicator_e: :regional_indicator_x:"
+    elif total >= 9500000:
+        grade = ":a: :a:"
+    elif total >= 9200000:
+        grade = ":a:"
+    elif total >= 8900000:
+        grade = ":b:"
+    elif total >= 8600000:
+        grade = ":regional_indicator_c:"
+    else:
+        grade = ":regional_indicator_f:"
+
+    await ctx.channel.send("Hard Judge Score:\n" + grade + "  **" + str(total) + "**")
+
+@bot.command()
+async def exhard(ctx, s, p, f, l):
+    shiny = float(s)
+    pure = float(p) - float(s)
+    far = float(f)
+    lost = float(l)
+    ncount = shiny + pure + far + lost
+    sscore = 10000000/ncount
+    pscore = sscore*(0.5)
+    fscore = 0
+    total = shiny*sscore + pure*pscore + far*fscore
+    grade = ""
+
+    if total > 10000000:
+        grade = ":place_of_worship: :place_of_worship: :place_of_worship: wait how did you get over 10m, please check your inputs!"
+    elif total == 10000000:
+        grade = ":regional_indicator_m: :regional_indicator_p: :regional_indicator_m: :tada:"
+    elif total >= 9900000:
+        grade = ":regional_indicator_e: :regional_indicator_x: :arrow_double_up:"
+    elif total >= 9800000:
+        grade = ":regional_indicator_e: :regional_indicator_x:"
+    elif total >= 9500000:
+        grade = ":a: :a:"
+    elif total >= 9200000:
+        grade = ":a:"
+    elif total >= 8900000:
+        grade = ":b:"
+    elif total >= 8600000:
+        grade = ":regional_indicator_c:"
+    else:
+        grade = ":regional_indicator_f:"
+
+    await ctx.channel.send("EXTRA Hard Judge Score:\n" + grade + "  **" + str(total) + "**")
+
 @bot.command()
 async def help (ctx, arg = ""):
     helpstr = ""
@@ -841,11 +910,16 @@ async def help (ctx, arg = ""):
         await ctx.channel.send("``rand [pack]`` - Randomizes songs from a specific pack. The  ``free`` pack is pre-made for convenience for F2P players.")
     elif arg == "cuslist":
         await ctx.channel.send("``cuslist addpack [pack]`` - Add a pack to the custom list, you can add a pack more than once.\n``cuslist rm [int]`` - Remove a song from the list, song number is shown using ``cuslist view``. To remove duplicates, use ``dup`` instead of a number\n``cuslist view`` - View the custom list\n``cuslist reset`` - Reset the custom list to an empty list\n``cuslist filter [difficulty] [operator] [level]`` Filter only specific difficulties, supported operators are ``>``, ``<``, and ``=``. For ``X+`` difficulties, use ``X.7``. **Note the spaces between arguments**")
+    elif arg == "hard":
+        await ctx.channel.send("``hard [shiny] [pure] [far] [lost]`` - A harder judge for shiny acc battling, uses RAVON's ratio of 5:3:1:0")
+    elif arg == "exhard":
+        await ctx.channel.send("``exhard [shiny] [pure] [far] [lost]`` - An even harder judge for shiny acc battling, pures are worth half of shinies, fars and below don't count")
     elif arg == "pack":
         await ctx.channel.send("``all`` - All Songs\n``free`` - All Free Songs (Arcaea + World Extend)\n``ma`` - Memory Archive\n``arc`` - Arcaea\n``we`` - World Extend\n``bf`` - Black Fate\n``ap`` - Adverse Prelude\n``ls`` - Luminous Sky\n``vl`` - Vicious Labyrinth\n``ec`` - Eternal Core\n``sr`` - Sunset Radiance\n``ar`` - Absolute Reason\n``be`` - Binary Enfold\n``av`` - Ambivalent Vision\n``cs`` - Crimson Solace\n``ep`` - Ephemeral Page\n``eo`` - Esoteric Order\n``mai`` - maimai\n``ong`` - O.N.G.E.K.I\n``chu`` - CHUNITHM\n``gc`` - Groove Coaster\n``lan`` - Lanota\n``dnx`` - Dynamix\n``cus`` - Custom List")
     else:
-        helpstr = "Current Arcbot Commands:```\nrand\ncuslist```"
+        helpstr = "Current Arcbot Commands:```\nrand\ncuslist\nhard\nexhard```"
         helpstr = helpstr + "For more information on each command, type ``$help [command]`` or for pack abbrieviations, type ``$help pack``"
         await ctx.channel.send(helpstr)
+
 keep_alive()
 bot.run(os.getenv('TOKEN'))
