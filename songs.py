@@ -237,6 +237,13 @@ song215 = Song("Coastal Highway", 3, 6, 8, 0)
 song216 = Song("ΟΔΥΣΣΕΙΑ", 4, 7, 9, 0)
 song217 = Song("Overwhelm", 5, 8, 10, 0)
 
+#DH Pack
+song1001 = Song("First Snow", 2, 4, 7, 0)
+song1002 = Song("Blocked Library", 3, 6, 9, 0)
+song1003 = Song("Blue Rose", 2, 5, 9, 0)
+song1004 = Song("nέo κósmo", 4, 7, 9.7, 0)
+song1005 = Song("Lightning Screw", 4, 7, 10, 0)
+
 #DNX Pack
 song36 = Song("Moonlight of Sand Castle", 1, 5, 7, 0)
 song37 = Song("REconstruction", 2, 6, 8, 0)
@@ -326,6 +333,8 @@ paletapestrylist = [song215, song216, song217]
 
 esotericorderlist = [song210, song211, song212, song213, song214]
 
+dividedheartlist = [song1001, song1002, song1003, song1005]
+
 maimailist = [song196, song197, song198, song199]
 
 ongekilist = [song192, song193, song194, song195]
@@ -342,7 +351,7 @@ lanotalist = [song65, song66, song67, song68, song69]
 
 dynamixlist = [song36, song37, song38, song39, song40]
 
-songlist = memoryarchivelist + arcaealist + worldextendlist + blackfatelist + adversepreludelist + luminousskylist + viciouslabyrinthlist + eternalcorelist + ephemeralpagelist + thejourneyonwardslist + sunsetradiancelist + absolutereasonlist + binaryenfoldlist + ambivalentvisionlist + crimsonsolacelist + esotericorderlist + paletapestrylist + maimailist + ongekilist + chunithmlist + chunithm2list + groovecoasterlist + tonespherelist + lanotalist + dynamixlist
+songlist = memoryarchivelist + arcaealist + worldextendlist + blackfatelist + adversepreludelist + luminousskylist + viciouslabyrinthlist + eternalcorelist + ephemeralpagelist + thejourneyonwardslist + sunsetradiancelist + absolutereasonlist + binaryenfoldlist + ambivalentvisionlist + crimsonsolacelist + esotericorderlist + paletapestrylist + dividedheartlist + maimailist + ongekilist + chunithmlist + chunithm2list + groovecoasterlist + tonespherelist + lanotalist + dynamixlist
 
 freelist = worldextendlist + arcaealist
 

@@ -110,6 +110,11 @@ async def randfunc(ctx, arg):
         await ctx.channel.send('Random Pale Tapestry Songs')
         thislist = songs.paletapestrylist
 
+    elif arg == "dh":
+        print("Ramdom Divided Heart Songs")
+        await ctx.channel.send('Random Divided Heart Songs')
+        thislist = songs.dividedheartlist
+
     elif arg == "mai":
         print("Random maimai Songs")
         await ctx.channel.send('Random maimai Songs')

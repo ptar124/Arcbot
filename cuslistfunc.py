@@ -259,8 +259,13 @@ async def cuslistfunc(ctx, arg):
 
         elif packname == "cs":
             songs.customlist = songs.customlist + songs.crimsonsolacelist
-            print("All Crimsone Solace Songs added to custom list")
+            print("All Crimson Solace Songs added to custom list")
             await ctx.channel.send("All Crimson Solace Songs added to custom list")
+
+        elif packname == "dh":
+            songs.customlist = songs.customlist + songs.dividedheartlist
+            print("All Divided Heart Songs added to custom list")
+            await ctx.channel.send("All Divided Heart Songs added to custom list")
 
         elif packname == "mai":
             songs.customlist = songs.customlist + songs.maimailist
