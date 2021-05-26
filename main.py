@@ -1,8 +1,8 @@
 import discord
 from discord.ext import commands
 from keep_alive import keep_alive
+from randfunc import randfunc
 import os
-import random
 
 #bot = discord.Client()
 bot = commands.Bot(command_prefix = "$")
@@ -230,6 +230,8 @@ song184 = Song("Eccentric Tale", 2, 5, 8, 0)
 song185 = Song("Alice’s Suitcase", 3, 6, 9, 0)
 song186 = Song("Jump", 4, 6, 9, 0)
 song187 = Song("Felis", 4, 7, 10, 0)
+
+#EP Append (TJO)
 song189 = Song("Beside You", 2, 6, 8, 0)
 song190 = Song("Heart Jackin’", 3, 5, 9.7, 0)
 song191 = Song("To: Alice Liddell", 4, 7, 10, 0)
@@ -240,7 +242,7 @@ song211 = Song("Crystal Gravity", 3, 6, 9 ,0)
 song212 = Song("Far Away Light", 4, 7, 9.7, 0)
 song213 = Song("Löschen", 3, 7, 10, 0)
 song214 = Song("Aegleseeker", 5, 8, 11, 0)
-#EO Append
+#EO Append (PT)
 song215 = Song("Coastal Highway", 3, 6, 8, 0)
 song216 = Song("ΟΔΥΣΣΕΙΑ", 4, 7, 9, 0)
 song217 = Song("Overwhelm", 5, 8, 10, 0)
@@ -278,6 +280,7 @@ song176 = Song("Got hive of Ra", 3, 6, 9.7, 0)
 song124 = Song("Garakuta Doll Play", 4, 6, 10, 0)
 song125 = Song("Ikazuchi", 3, 7, 10, 0)
 song126 = Song("World Vanquisher", 2, 5, 10.7, 0)
+#Chu Append (Chu2)
 song200 = Song("Climax", 4, 7, 10, 0)
 song201 = Song("Last Celebration", 3, 6, 10, 0)
 song202 = Song("Misdeed -la bonté de Dieu et l’origine du mal-", 5, 8, 10.7, 0)
@@ -313,7 +316,10 @@ viciouslabyrinthlist = [song55, song56, song57, song58, song59, song60]
 
 eternalcorelist = [song12, song13, song14, song15, song16, song17, song18, song19, song113]
 
-ephemeralpagelist = [song183, song184, song185, song186, song187, song189, song190, song191]
+#EP Append
+thejourneyonwardslist = [song189, song190, song191]
+
+ephemeralpagelist = [song183, song184, song185, song186, song187]
 
 sunsetradiancelist = [song132, song133, song134, song135, song136]
 
@@ -325,13 +331,18 @@ ambivalentvisionlist = [song44, song45, song46, song47, song48, song155]
 
 crimsonsolacelist = [song25, song26, song27, song28, song29, song140]
 
-esotericorderlist = [song210, song211, song212, song213, song214, song215, song216, song217]
+#EO Append
+paletapestrylist = [song215, song216, song217]
+
+esotericorderlist = [song210, song211, song212, song213, song214]
 
 maimailist = [song196, song197, song198, song199]
 
 ongekilist = [song192, song193, song194, song195]
 
-chunithmlist = [song124, song125, song126, song200, song201, song202]
+chunithm2list = [song200, song201, song202]
+
+chunithmlist = [song124, song125, song126]
 
 groovecoasterlist = [song107, song108, song109, song110, song111, song176]
 
@@ -352,206 +363,13 @@ async def on_ready():
     print('We have logged in as {0.user}'.format(bot))
 
 @bot.command()
-async def rand(ctx, arg):
- 
-    global rng
-    global choice
-    global picked
+async def rand(ctx, *, arg):
+    randfunc(arg)
 
-    global memoryarchivelist
-    global arcaealist
-    global worldextendlist
-    global blackfatelist
-    global adversepreludelist
-    global luminousskylist
-    global viciouslabyrinthlist
-    global eternalcorelist
-    global ephemeralpagelist
-    global sunsetradiancelist
-    global absolutereasonlist
-    global binaryenfoldlist
-    global ambivalentvisionlist
-    global crimsonsolacelist
-    global esotericorderlist
-    global maimailist
-    global ongekilist
-    global chunithmlist
-    global groovecoasterlist
-    global tonespherelist
-    global lanotalist
-    global dynamixlist
-    global songlist
-    global freelist
-    global customlist
-
-    thislist = []
-
-    if arg == "all":
-        print("Random All")
-        await ctx.channel.send('Random All Songs')
-        thislist = songlist
-
-    elif arg == "free":
-        print("Random All Free Songs")
-        await ctx.channel.send('Random All Free Songs')
-        thislist = worldextendlist + arcaealist
-    
-    elif arg == "ma":
-        print("Random Memory Archive Songs")
-        await ctx.channel.send('Random All Memory Archive Songs')
-        thislist = memoryarchivelist
-
-    elif arg == "arc":
-        print("Random Arcaea Songs")
-        await ctx.channel.send('Random Arcaea Songs')
-        thislist = arcaealist
-        
-    elif arg == "we":
-        print("Random World Extend Songs")
-        await ctx.channel.send('Random World Extend Songs')
-        thislist = worldextendlist
-
-    elif arg == "bf":
-        print("Random Black Fate Songs")
-        await ctx.channel.send('Random Black Fate Songs')
-        thislist = blackfatelist
-
-    elif arg == "ap":
-        print("Random Adverse Prelude Songs")
-        await ctx.channel.send('Random Adverse Prelude Songs')
-        thislist = adversepreludelist
-
-    elif arg == "ls":
-        print("Random Luminous Sky Songs")
-        await ctx.channel.send('Random Luminious Sky Songs')
-        thislist = luminousskylist
-
-    elif arg == "vl":
-        print("Random Vicious Labyrinth Songs")
-        await ctx.channel.send('Random Vicious Labyrinth Songs')
-        thislist = viciouslabyrinthlist
-
-    elif arg == "ec":
-        print("Random Eternal Core Songs")
-        await ctx.channel.send('Random Eternal Core Songs')
-        thislist = eternalcorelist
-    
-    elif arg == "ep":
-        print("Random Ephemeral Page Songs")
-        await ctx.channel.send('Random Ephemeral Page Songs')
-        thislist = ephemeralpagelist
-
-    elif arg == "sr":
-        print("Random Sunset Radiance Songs")
-        await ctx.channel.send('Random Sunset Radiance Songs')
-        thislist = sunsetradiancelist
-
-    elif arg == "ar":
-        print("Random Absolute Reason Songs")
-        await ctx.channel.send('Random Absolute ReasonSongs')
-        thislist = absolutereasonlist
-    
-    elif arg == "be":
-        print("Random Binary Enfold Songs")
-        await ctx.channel.send('Random Binary Enfold Songs')
-        thislist = binaryenfoldlist
-
-    elif arg == "av":
-        print("Radom Ambivalent Vision Songs")
-        await ctx.channel.send('Random Abivalent Vision Songs')
-        thislist = ambivalentvisionlist
-
-    elif arg == "cs":
-        print("Ramdom Crimson Solace Songs")
-        await ctx.channel.send('Random Crimson Solace Songs')
-        thislist = crimsonsolacelist
-
-    elif arg == "eo":
-        print("Ramdom Esoteric Order Songs")
-        await ctx.channel.send('Random Esoteric Order Songs')
-        thislist = esotericorderlist
-
-    elif arg == "mai":
-        print("Random maimai Songs")
-        await ctx.channel.send('Random maimai Songs')
-        thislist = maimailist
-
-    elif arg == "ong":
-        print("Random O.N.G.E.K.I. Songs")
-        await ctx.channel.send('Random O.N.G.E.K.I. Songs')
-        thislist = ongekilist
-
-    elif arg == "chu":
-        print("Random CHUNITHM Songs")
-        await ctx.channel.send('Random CHUNITHM Songs')
-        thislist = chunithmlist
-
-    elif arg == "gc":
-        print("Random Groove Coaster Songs")
-        await ctx.channel.send('Random Groove Coaster Songs')
-        thislist = groovecoasterlist
-
-    elif arg == "ts":
-        print("Random Tone Sphere Songs")
-        await ctx.channel.send('Random Tone Sphere Songs')
-        thislist = tonespherelist
-    
-    elif arg == "lan":
-        print("Random Lanota Songs")
-        await ctx.channel.send('Random Lanota Songs')
-        thislist = lanotalist
-
-    elif arg == "dnx":
-        print("Random Dynamix Songs")
-        await ctx.channel.send('Random Dynamix Songs')
-        thislist = dynamixlist
-
-    elif arg == "cus":
-        print("Random Custom List Songs")
-        await ctx.channel.send('Random Custom List Songs')
-        thislist = customlist
-
-    else:
-        print("Invalid argument for command $rand")
-        await ctx.channel.send('Invalid argument for command $rand')
-
-    for x in range (3):
-        choice[x] = random.randint(0,len(thislist)-1)
-        if x > 0:
-            while choice[x] == choice[x-1]:
-                choice[x] = random.randint(0,len(thislist)-1)
-        if x > 1:
-            while choice[x] == choice[x-2] or choice[x] == choice[x-1]:
-                choice[x] = random.randint(0,len(thislist)-1)
-        picked[x] = thislist[choice[x]].gettitle()
-
-    await ctx.channel.send(':one: ' + picked[0] + '\n:two: ' + picked[1] + '\n:three: ' + picked[2] + "\n \n**Append packs are included in base pack,** remove them using the song list view for now. The '-append' suffix will be implemented later")
 
 @bot.command()
 async def cuslist(ctx, *, arg):
-    global memoryarchivelist
-    global arcaealist
-    global worldextendlist
-    global blackfatelist
-    global adversepreludelist
-    global luminousskylist
-    global viciouslabyrinthlist
-    global eternalcorelist
-    global ephemeralpagelist
-    global sunsetradiancelist
-    global absolutereasonlist
-    global binaryenfoldlist
-    global ambivalentvisionlist
-    global crimsonsolacelist
-    global maimailist
-    global ongekilist
-    global chunithmlist
-    global groovecoasterlist
-    global tonespherelist
-    global lanotalist
-    global dynamixlist
-    global songlist
-    global freelist
+
     global customlist
 
     if arg == "reset":
@@ -708,105 +526,136 @@ async def cuslist(ctx, *, arg):
 
 
     elif arg.startswith("addpack"):
-        if arg.startswith("all", 8):
+        packname = arg[8:]
+        if packname == "all":
             customlist = customlist + songlist
             print("All Songs added to custom list")
             await ctx.channel.send("All Songs added to custom list")
 
-        elif arg.startswith("free", 8):
+        elif packname == "free":
             customlist = customlist + freelist
             print("All Free Songs added to custom list")
             await ctx.channel.send("All Free Songs added to custom list")
 
-        elif arg.endswith("ma", 8):
+        elif packname == "ma":
             customlist = customlist + memoryarchivelist
             print("All Memory Archive Songs added to custom list")
             await ctx.channel.send("All Memory Archive Songs added to custom list")
 
-        elif arg.startswith("arc", 8):
+        elif packname == "arc":
             customlist = customlist + arcaealist
             print("All Arcaea Pack Songs added to custom list")
             await ctx.channel.send("All Arcaea Pack Songs added to custom list")
 
-        elif arg.startswith("we", 8):
+        elif packname == "we":
             customlist = customlist + worldextendlist
             print("All World Extend Songs added to custom list")
             await ctx.channel.send("All World Extend Songs added to custom list")
 
-        elif arg.startswith("bf", 8):
+        elif packname == "bf":
             customlist = customlist + blackfatelist
             print("All Black Fate Songs added to custom list")
             await ctx.channel.send("All Black Fate Songs added to custom list")
 
-        elif arg.startswith("ap", 8):
+        elif packname == "ap":
             customlist = customlist + adversepreludelist
             print("All Adverse Prelude Songs added to custom list")
             await ctx.channel.send("All Adverse Prelude Songs added to custom list")
 
-        elif arg.startswith("ls", 8):
+        elif packname == "ls":
             customlist = customlist + luminousskylist
             print("All Luminous Sky Songs added to custom list")
             await ctx.channel.send("All Luminous Sky Songs added to custom list")
 
-        elif arg.startswith("vl", 8):
+        elif packname == "vl":
             customlist = customlist + viciouslabyrinthlist
             print("All Vicious Labyrinth Songs added to custom list")
             await ctx.channel.send("All Vicious Labyrinth Songs added to custom list")
 
-        elif arg.startswith("ec", 8):
+        elif packname == "ec":
             customlist = customlist + eternalcorelist
             print("All Eternal Core Songs added to custom list")
             await ctx.channel.send("All Eternal Core Songs added to custom list")
 
-        elif arg.startswith("ep", 8):
-            customlist = customlist + ephemeralpagelist
+        elif packname == "ep":
+            customlist = customlist + ephemeralpagelist + thejourneyonwardslist
             print("All Ephemeral Page Songs added to custom list")
             await ctx.channel.send("All Ephemeral Page Songs added to custom list")
 
-        elif arg.startswith("eo", 8):
-            customlist = customlist + esotericorderlist
+        elif packname == "ep -append":
+            customlist = customlist + ephemeralpagelist
+            print("All Ephemeral Page Songs added to custom list")
+            await ctx.channel.send("All Ephemeral Page Songs added to custom list -append")
+
+        elif packname == "tjo" or packname == "ep append":
+            customlist = customlist + thejourneyonwardslist
+            print("All The Journey Onwards Songs added to custom list")
+            await ctx.channel.send("All The Journey Onwards Songs added to custom list")
+
+        elif packname == "eo":
+            customlist = customlist + esotericorderlist + paletapestrylist
             print("All Esoteric Order Songs added to custom list")
             await ctx.channel.send("All Esoteric Order Songs added to custom list")
 
-        elif arg.startswith("sr", 8):
+        elif packname == "eo -append":
+            customlist = customlist + esotericorderlist
+            print("All Esoteric Order Songs added to custom list")
+            await ctx.channel.send("All Esoteric Order Songs added to custom list -append")
+
+        elif packname == "pt" or packname == "eo append":
+            customlist = customlist + paletapestrylist
+            print("All Pale Tapestry Songs added to custom list")
+            await ctx.channel.send("All Pale Tapestry Songs added to custom list")
+
+        elif packname == "sr":
             customlist = customlist + sunsetradiancelist
             print("All Sunset Radiance Songs added to custom list")
             await ctx.channel.send("All Sunset Radiance Songs added to custom list")
 
-        elif arg.startswith("ar", 8):
+        elif packname == "ar":
             customlist = customlist + absolutereasonlist
             print("All Absolute Reason Songs added to custom list")
             await ctx.channel.send("All Absolute Reason Songs added to custom list")
 
-        elif arg.startswith("be", 8):
+        elif packname == "be":
             customlist = customlist + binaryenfoldlist
             print("All Binary Enfold Songs added to custom list")
             await ctx.channel.send("All Binary Enfold Songs added to custom list")
 
-        elif arg.startswith("av", 8):
+        elif packname == "av":
             customlist = customlist + ambivalentvisionlist
             print("All Ambivalent Vision Songs added to custom list")
             await ctx.channel.send("All Ambivalent Vision Songs added to custom list")
 
-        elif arg.startswith("cs", 8):
+        elif packname == "cs":
             customlist = customlist + crimsonsolacelist
             print("All Crimsone Solace Songs added to custom list")
             await ctx.channel.send("All Crimson Solace Songs added to custom list")
 
-        elif arg.startswith("mai", 8):
+        elif packname == "mai":
             customlist = customlist + maimailist
             print("All maimai Songs added to custom list")
             await ctx.channel.send("All maimai Songs added to custom list")
 
-        elif arg.startswith("ong", 8):
+        elif packname == "ong":
             customlist = customlist + ongekilist
             print("All O.N.G.E.K.I. Songs added to custom list")
             await ctx.channel.send("All O.N.G.E.K.I. Songs added to custom list")
 
-        elif arg.startswith("chu", 8):
+        elif packname == "chu":
+            customlist = customlist + chunithmlist + chunithm2list
+            print("All CHUNITHM Songs added to custom list")
+            await ctx.channel.send("All CHUNITHM Songs added to custom list")
+
+        elif packname == "chu -append":
             customlist = customlist + chunithmlist
             print("All CHUNITHM Songs added to custom list")
             await ctx.channel.send("All CHUNITHM Songs added to custom list")
+
+        elif packname == "chu2" or packname == "chu append":
+            customlist = customlist + chunithm2list
+            print("All CHUNITHM Chapter 2 Songs added to custom list")
+            await ctx.channel.send("All CHUNITHM Chapter 2 Songs added to custom list")
 
         elif arg.startswith("gc", 8):
             customlist = customlist + groovecoasterlist
