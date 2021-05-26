@@ -3,9 +3,6 @@ import songs
 
 async def randfunc(ctx, arg):
 
-    choice = []
-    picked = []
-
     thislist = []
 
     if arg == "all":
@@ -168,13 +165,13 @@ async def randfunc(ctx, arg):
         await ctx.channel.send('Invalid argument for command $rand')
 
     for x in range (3):
-        choice[x] = random.randint(0,len(thislist)-1)
+        songs.choice[x] = random.randint(0,len(thislist)-1)
         if x > 0:
-            while choice[x] == choice[x-1]:
-                choice[x] = random.randint(0,len(thislist)-1)
+            while songs.choice[x] == songs.choice[x-1]:
+                songs.choice[x] = random.randint(0,len(thislist)-1)
         if x > 1:
-            while choice[x] == choice[x-2] or choice[x] == choice[x-1]:
-                choice[x] = random.randint(0,len(thislist)-1)
-        picked[x] = thislist[choice[x]].gettitle()
+            while songs.choice[x] == songs.choice[x-2] or songs.choice[x] == songs.choice[x-1]:
+                songs.choice[x] = random.randint(0,len(thislist)-1)
+        songs.picked[x] = thislist[songs.choice[x]].gettitle()
 
-    await ctx.channel.send(':one: ' + picked[0] + '\n:two: ' + picked[1] + '\n:three: ' + picked[2] + "\n \nThe -append command has been implemented, if it's not working as intended, ping ptar124.")
+    await ctx.channel.send(':one: ' + songs.picked[0] + '\n:two: ' + songs.picked[1] + '\n:three: ' + songs.picked[2] + "\n \nThe -append command has been implemented, if it's not working as intended, ping ptar124.")

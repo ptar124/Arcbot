@@ -342,7 +342,7 @@ lanotalist = [song65, song66, song67, song68, song69]
 
 dynamixlist = [song36, song37, song38, song39, song40]
 
-songlist = memoryarchivelist + arcaealist + worldextendlist + blackfatelist + adversepreludelist + luminousskylist + viciouslabyrinthlist + eternalcorelist + ephemeralpagelist + sunsetradiancelist + absolutereasonlist + binaryenfoldlist + ambivalentvisionlist + crimsonsolacelist + esotericorderlist + maimailist + ongekilist + chunithmlist + groovecoasterlist + tonespherelist + lanotalist + dynamixlist
+songlist = memoryarchivelist + arcaealist + worldextendlist + blackfatelist + adversepreludelist + luminousskylist + viciouslabyrinthlist + eternalcorelist + ephemeralpagelist + thejourneyonwardslist + sunsetradiancelist + absolutereasonlist + binaryenfoldlist + ambivalentvisionlist + crimsonsolacelist + esotericorderlist + paletapestrylist + maimailist + ongekilist + chunithmlist + chunithm2list + groovecoasterlist + tonespherelist + lanotalist + dynamixlist
 
 freelist = worldextendlist + arcaealist
 
