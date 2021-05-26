@@ -24,7 +24,6 @@ async def rand(ctx, *, arg):
 async def cuslist(ctx, *, arg):
     await cuslistfunc(ctx, arg)
 
-
 @bot.command()
 async def hard(ctx, s, p, f, l):
     await hardfunc(ctx, s, p, f, l)
