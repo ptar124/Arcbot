@@ -333,7 +333,7 @@ paletapestrylist = [song215, song216, song217]
 
 esotericorderlist = [song210, song211, song212, song213, song214]
 
-dividedheartlist = [song1001, song1002, song1003, song1005]
+dividedheartlist = [song1001, song1002, song1003, song1004, song1005]
 
 maimailist = [song196, song197, song198, song199]
 
