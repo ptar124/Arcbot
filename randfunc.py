@@ -1,185 +1,167 @@
 import random
+import songs
 
 async def randfunc(ctx, arg):
-    global choice
-    global picked
 
-    global thislist
-    global memoryarchivelist
-    global arcaealist
-    global worldextendlist
-    global eternalcorelist
-    global viciouslabyrinthlist
-    global luminousskylist
-    global adversepreludelist
-    global blackfatelist
-    global crimsonsolacelist
-    global ambivalentvisionlist
-    global binaryenfoldlist
-    global absolutereasonlist
-    global sunsetradiancelist
-    global ephemeralpagelist
-    global thejourneyonwardslist
-    global esotericorderlist
-    global paletapestrylist
-    global songlist
+    choice = []
+    picked = []
 
     thislist = []
 
     if arg == "all":
         print("Random All")
         await ctx.channel.send('Random All Songs')
-        thislist = songlist
+        thislist = songs.songlist
 
     elif arg == "free":
         print("Random All Free Songs")
         await ctx.channel.send('Random All Free Songs')
-        thislist = worldextendlist + arcaealist
+        thislist = songs.worldextendlist + songs.arcaealist
     
     elif arg == "ma":
         print("Random Memory Archive Songs")
         await ctx.channel.send('Random All Memory Archive Songs')
-        thislist = memoryarchivelist
+        thislist = songs.memoryarchivelist
 
     elif arg == "arc":
         print("Random Arcaea Songs")
         await ctx.channel.send('Random Arcaea Songs')
-        thislist = arcaealist
+        thislist = songs.arcaealist
         
     elif arg == "we":
         print("Random World Extend Songs")
         await ctx.channel.send('Random World Extend Songs')
-        thislist = worldextendlist
+        thislist = songs.worldextendlist
 
     elif arg == "bf":
         print("Random Black Fate Songs")
         await ctx.channel.send('Random Black Fate Songs')
-        thislist = blackfatelist
+        thislist = songs.blackfatelist
 
     elif arg == "ap":
         print("Random Adverse Prelude Songs")
         await ctx.channel.send('Random Adverse Prelude Songs')
-        thislist = adversepreludelist
+        thislist = songs.adversepreludelist
 
     elif arg == "ls":
         print("Random Luminous Sky Songs")
         await ctx.channel.send('Random Luminious Sky Songs')
-        thislist = luminousskylist
+        thislist = songs.luminousskylist
 
     elif arg == "vl":
         print("Random Vicious Labyrinth Songs")
         await ctx.channel.send('Random Vicious Labyrinth Songs')
-        thislist = viciouslabyrinthlist
+        thislist = songs.viciouslabyrinthlist
 
     elif arg == "ec":
         print("Random Eternal Core Songs")
         await ctx.channel.send('Random Eternal Core Songs')
-        thislist = eternalcorelist
+        thislist = songs.eternalcorelist
     
     elif arg == "ep":
         print("Random Ephemeral Page Songs")
         await ctx.channel.send('Random Ephemeral Page Songs')
-        thislist = ephemeralpagelist + thejourneyonwardslist
+        thislist = songs.ephemeralpagelist + songs.thejourneyonwardslist
     
     elif arg == "ep -append":
         print("Random Ephemeral Page Songs")
         await ctx.channel.send('Random Ephemeral Page Songs -append')
-        thislist = ephemeralpagelist
+        thislist = songs.ephemeralpagelist
 
     elif arg == "tjo" or arg == "ep append":
         print("Random The Journey Onwards Songs")
         await ctx.channel.send('Random The Journey Onwards Songs')
-        thislist = thejourneyonwardslist
+        thislist = songs.thejourneyonwardslist
 
     elif arg == "sr":
         print("Random Sunset Radiance Songs")
         await ctx.channel.send('Random Sunset Radiance Songs')
-        thislist = sunsetradiancelist
+        thislist = songs.sunsetradiancelist
 
     elif arg == "ar":
         print("Random Absolute Reason Songs")
         await ctx.channel.send('Random Absolute Reason Songs')
-        thislist = absolutereasonlist
+        thislist = songs.absolutereasonlist
     
     elif arg == "be":
         print("Random Binary Enfold Songs")
         await ctx.channel.send('Random Binary Enfold Songs')
-        thislist = binaryenfoldlist
+        thislist = songs.binaryenfoldlist
 
     elif arg == "av":
         print("Radom Ambivalent Vision Songs")
         await ctx.channel.send('Random Abivalent Vision Songs')
-        thislist = ambivalentvisionlist
+        thislist = songs.ambivalentvisionlist
 
     elif arg == "cs":
         print("Ramdom Crimson Solace Songs")
         await ctx.channel.send('Random Crimson Solace Songs')
-        thislist = crimsonsolacelist
+        thislist = songs.crimsonsolacelist
 
     elif arg == "eo":
         print("Ramdom Esoteric Order Songs")
         await ctx.channel.send('Random Esoteric Order Songs')
-        thislist = esotericorderlist + paletapestrylist
+        thislist = songs.esotericorderlist + songs.paletapestrylist
 
     elif arg == "eo -append":
         print("Ramdom Esoteric Order Songs")
         await ctx.channel.send('Random Esoteric Order Songs -append')
-        thislist = esotericorderlist
+        thislist = songs.esotericorderlist
 
     elif arg == "pt" or arg == "eo append":
         print("Ramdom Pale Tapestry Songs")
         await ctx.channel.send('Random Pale Tapestry Songs')
-        thislist = paletapestrylist
+        thislist = songs.paletapestrylist
 
     elif arg == "mai":
         print("Random maimai Songs")
         await ctx.channel.send('Random maimai Songs')
-        thislist = maimailist
+        thislist = songs.maimailist
 
     elif arg == "ong":
         print("Random O.N.G.E.K.I. Songs")
         await ctx.channel.send('Random O.N.G.E.K.I. Songs')
-        thislist = ongekilist
+        thislist = songs.ongekilist
 
     elif arg == "chu":
         print("Random CHUNITHM Songs")
         await ctx.channel.send('Random CHUNITHM Songs')
-        thislist = chunithmlist + chunithm2list
+        thislist = songs.chunithmlist + songs.chunithm2list
 
     elif arg == "chu -append":
         print("Random CHUNITHM Songs")
         await ctx.channel.send('Random CHUNITHM Songs -append')
-        thislist = chunithmlist
+        thislist = songs.chunithmlist
     
     elif arg == "chu2" or arg == "chu append":
         print("Random CHUNITHM Chapter 2 Songs")
         await ctx.channel.send('Random CHUNITHM Chapter 2 Songs')
-        thislist = chunithm2list 
+        thislist = songs.chunithm2list 
 
     elif arg == "gc":
         print("Random Groove Coaster Songs")
         await ctx.channel.send('Random Groove Coaster Songs')
-        thislist = groovecoasterlist
+        thislist = songs.groovecoasterlist
 
     elif arg == "ts":
         print("Random Tone Sphere Songs")
         await ctx.channel.send('Random Tone Sphere Songs')
-        thislist = tonespherelist
+        thislist = songs.tonespherelist
     
     elif arg == "lan":
         print("Random Lanota Songs")
         await ctx.channel.send('Random Lanota Songs')
-        thislist = lanotalist
+        thislist = songs.lanotalist
 
     elif arg == "dnx":
         print("Random Dynamix Songs")
         await ctx.channel.send('Random Dynamix Songs')
-        thislist = dynamixlist
+        thislist = songs.dynamixlist
 
     elif arg == "cus":
         print("Random Custom List Songs")
         await ctx.channel.send('Random Custom List Songs')
-        thislist = customlist
+        thislist = songs.customlist
 
     else:
         print("Invalid argument for command $rand")
