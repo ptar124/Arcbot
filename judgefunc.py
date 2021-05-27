@@ -7,7 +7,7 @@ async def hardfunc(ctx, s, p, f, l):
     sscore = 10000000/ncount
     pscore = sscore*(0.6)
     fscore = sscore*(0.2)
-    total = shiny*sscore + pure*pscore + far*fscore
+    total = round(shiny*sscore + pure*pscore + far*fscore)
     grade = ""
 
     if total > 10000000:
@@ -40,7 +40,7 @@ async def exhardfunc(ctx, s, p, f, l):
     sscore = 10000000/ncount
     pscore = sscore*(0.5)
     fscore = 0
-    total = shiny*sscore + pure*pscore + far*fscore
+    total = round(shiny*sscore + pure*pscore + far*fscore)
     grade = ""
 
     if total > 10000000:
