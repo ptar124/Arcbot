@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-#from keep_alive import keep_alive
+from keep_alive import keep_alive
 from randfunc import randfunc
 from cuslistfunc import cuslistfunc
 from judgefunc import hardfunc
