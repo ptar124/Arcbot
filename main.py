@@ -36,5 +36,5 @@ async def exhard(ctx, s, p, f, l):
 async def help(ctx, arg=""):
 	await helpfunc(ctx, arg)
 
-#keep_alive()
+keep_alive()
 bot.run(os.getenv('TOKEN'))
