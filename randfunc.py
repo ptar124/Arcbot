@@ -179,4 +179,8 @@ async def randfunc(ctx, arg):
                 songs.choice[x] = random.randint(0,len(thislist)-1)
         songs.picked[x] = thislist[songs.choice[x]].gettitle()
 
-    await ctx.channel.send(':one: ' + songs.picked[0] + '\n:two: ' + songs.picked[1] + '\n:three: ' + songs.picked[2] + "\n \nThe -append command has been implemented, if it's not working as intended, ping ptar124.")
+    message = await ctx.channel.send(':one: ' + songs.picked[0] + '\n:two: ' + songs.picked[1] + '\n:three: ' + songs.picked[2] + "\n \nThe -append command has been implemented, if it's not working as intended, ping ptar124.")
+    
+    emojilist = ['1️⃣', '2️⃣', '3️⃣']
+    for x in range (3):
+        await message.add_reaction(emojilist[x])
