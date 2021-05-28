@@ -1,10 +1,10 @@
 import discord
-from discord.ext import commands
+from itertools import cycle
+from discord.ext import commands, tasks
 from keep_alive import keep_alive
 from randfunc import randfunc
 from cuslistfunc import cuslistfunc
-from judgefunc import hardfunc
-from judgefunc import exhardfunc
+from judgefunc import hardfunc, exhardfunc
 from helpfunc import helpfunc
 import os
 
@@ -14,7 +14,9 @@ bot.remove_command('help')
 
 @bot.event
 async def on_ready():
-	print('We have logged in as {0.user}'.format(bot))
+  change_status.start()
+  uptime_message.start()
+  print('We have logged in as {0.user}'.format(bot))
 
 @bot.command()
 async def rand(ctx, *, arg):
@@ -37,4 +39,19 @@ async def help(ctx, arg=""):
 	await helpfunc(ctx, arg)
 
 keep_alive()
+
+status = cycle(['$help for info','ping ptar if down'])
+uptime = 0
+
+@tasks.loop(seconds=10)
+async def change_status():
+    global uptime
+    uptime = uptime + 10
+    await bot.change_presence(activity=discord.Game(next(status)))
+
+@tasks.loop(seconds=3600)
+async def uptime_message():
+    global uptime
+    print("bot up for:" + str(uptime))
+
 bot.run(os.getenv('TOKEN'))
