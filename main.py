@@ -4,7 +4,7 @@ from discord.ext import commands, tasks
 from keep_alive import keep_alive
 from randfunc import randfunc
 from cuslistfunc import cuslistfunc
-from judgefunc import hardfunc, exhardfunc
+from judgefunc import hardfunc, exhardfunc, chunifunc
 from helpfunc import helpfunc
 import os
 
@@ -33,6 +33,10 @@ async def hard(ctx, s, p, f, l):
 @bot.command()
 async def exhard(ctx, s, p, f, l):
 	await exhardfunc(ctx, s, p, f, l)
+	
+@bot.command()
+async def chuni(ctx, s, p, f, l):
+	await chunifunc(ctx, s, p, f, l)
 
 @bot.command()
 async def help(ctx, arg=""):
