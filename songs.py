@@ -134,7 +134,7 @@ song182 = Song("Xanatos", 4, 7, 10, 0)
 song203 = Song("AttraqtiA", 4, 7, 10, 0)
 song207 = Song("GIMME DA BLOOD", 3, 7, 10, 0)
 song208 = Song("Bassline Yatteru? w", 3, 6, 9, 0)
-song220 = Song("THE ULTIMACY", 2, 6, 9, 0)
+song220 = Song("THE ULTIMACY", 2, 6, 9.7, 0)
 song221 = Song("REKKA RESONANCE", 5, 8, 10.7, 0)
 
 #EC Pack
