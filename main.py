@@ -4,6 +4,7 @@ from discord.ext import commands, tasks
 from keep_alive import keep_alive
 from randfunc import randfunc
 from cuslistfunc import cuslistfunc
+from combinefunc import combinefunc
 from judgefunc import hardfunc, exhardfunc
 from helpfunc import helpfunc
 import os
@@ -25,6 +26,10 @@ async def rand(ctx, *, arg):
 @bot.command()
 async def cuslist(ctx, *, arg):
 	await cuslistfunc(ctx, arg)
+
+@bot.command()
+async def combine(ctx, code1, op, code2):
+  await combinefunc(ctx, code1, op, code2)
 
 @bot.command()
 async def hard(ctx, s, p, f, l):

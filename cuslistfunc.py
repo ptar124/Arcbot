@@ -1,4 +1,5 @@
 import songs
+import base64
 
 async def cuslistfunc(ctx, arg):
 
@@ -153,6 +154,54 @@ async def cuslistfunc(ctx, arg):
 
         else:
             await ctx.channel.send("Invalid difficulty, level, or operation")
+
+    
+    elif arg.startswith("save"):
+
+        stringcode = ""
+        for i in songs.dateorderedlist:
+            found = "0"
+            for j in songs.customlist:
+                if i == j:
+                    found = "1"
+            stringcode = stringcode + found
+
+        while len(stringcode) < 256:
+            stringcode = stringcode + "0"
+        
+        bincode = int("0b" + stringcode, 2)
+        hexcode = hex(bincode)
+
+        print("bin out: " + stringcode)
+        print("dec out: " + str(bincode))
+        print("hex out: " + hexcode)
+
+        await ctx.channel.send("The code for this list is\n``" + hexcode + "``")
+
+    elif arg.startswith("load"):
+
+        hexinput = int(arg[5:], 16)
+        bininput = bin(hexinput).replace("0b", "")
+
+        zeroesneeded = 256 - len(bininput)
+        zeroesstring = ""
+
+        for x in range (zeroesneeded):
+            zeroesstring = zeroesstring + "0"
+
+        binstring = zeroesstring + bininput
+        
+        print("hex in:" + arg[5:])
+        print("dec in:" + str(hexinput))
+        print("bin in: " + binstring)
+
+        await ctx.channel.send("Loaded list, code:\n``" + arg[5:] + "``")
+
+        songs.customlist = []
+        for i in range (len(songs.dateorderedlist)):
+            havesong = binstring[i]
+            if havesong == "1":
+                songs.customlist.append(songs.dateorderedlist[i])
 
 
     elif arg.startswith("addpack"):
@@ -324,6 +373,7 @@ async def cuslistfunc(ctx, arg):
 
         else:
             await ctx.channel.send("Invalid pack or song name")
+
     else:
         print("Invalid argument for command $cuslist")
         await ctx.channel.send('Invalid argument for command $cuslist')
