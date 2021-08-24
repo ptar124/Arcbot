@@ -223,7 +223,7 @@ async def cuslistfunc(ctx, arg):
             await ctx.channel.send("All The Journey Onwards Songs added to custom list")
 
         elif packname == "eo":
-            songs.customlist = songs.customlist + songs.esotericorderlist + songs.paletapestrylist
+            songs.customlist = songs.customlist + songs.esotericorderlist + songs.paletapestrylist + songs.lightofsalvationlist
             print("All Esoteric Order Songs added to custom list")
             await ctx.channel.send("All Esoteric Order Songs added to custom list")
 
@@ -236,6 +236,11 @@ async def cuslistfunc(ctx, arg):
             songs.customlist = songs.customlist + songs.paletapestrylist
             print("All Pale Tapestry Songs added to custom list")
             await ctx.channel.send("All Pale Tapestry Songs added to custom list")
+
+        elif packname == "los" or packname == "eo append 2":
+            songs.customlist = songs.customlist + songs.lightofsalvationlist
+            print("All Light of Salvation Songs added to custom list")
+            await ctx.channel.send("All Light of Salvation Songs added to custom list")
 
         elif packname == "sr":
             songs.customlist = songs.customlist + songs.sunsetradiancelist
@@ -308,9 +313,14 @@ async def cuslistfunc(ctx, arg):
             await ctx.channel.send("All Lanota Songs added to custom list")
 
         elif arg.startswith("dnx", 8):
-            songs.customlist = songs.customlist + songs.adversepreludelist
+            songs.customlist = songs.customlist + songs.dynamixlist
             print("All Dynamix Songs added to custom list")
             await ctx.channel.send("All Dynamix Songs added to custom list")
+
+        elif arg.startswith("wac", 8):
+            songs.customlist = songs.customlist + songs.waccalist
+            print("All WACCA Songs added to custom list")
+            await ctx.channel.send("All WACCA Songs added to custom list")
 
         else:
             await ctx.channel.send("Invalid pack or song name")

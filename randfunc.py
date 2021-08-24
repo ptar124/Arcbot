@@ -98,7 +98,7 @@ async def randfunc(ctx, arg):
     elif arg == "eo":
         print("Ramdom Esoteric Order Songs")
         await ctx.channel.send('Random Esoteric Order Songs')
-        thislist = songs.esotericorderlist + songs.paletapestrylist
+        thislist = songs.esotericorderlist + songs.paletapestrylist + songs.lightofsalvationlist
 
     elif arg == "eo -append":
         print("Ramdom Esoteric Order Songs")
@@ -108,6 +108,11 @@ async def randfunc(ctx, arg):
     elif arg == "pt" or arg == "eo append":
         print("Ramdom Pale Tapestry Songs")
         await ctx.channel.send('Random Pale Tapestry Songs')
+        thislist = songs.paletapestrylist
+
+    elif arg == "los" or arg == "eo append 2":
+        print("Ramdom Light of Salvation Songs")
+        await ctx.channel.send('Random Light of Salvation Songs')
         thislist = songs.paletapestrylist
 
     elif arg == "dh":
@@ -160,6 +165,11 @@ async def randfunc(ctx, arg):
         await ctx.channel.send('Random Dynamix Songs')
         thislist = songs.dynamixlist
 
+    elif arg == "wac":
+        print("Random WACCA Songs")
+        await ctx.channel.send('Random WACCA Songs')
+        thislist = songs.waccalist
+
     elif arg == "cus":
         print("Random Custom List Songs")
         await ctx.channel.send('Random Custom List Songs')
@@ -179,7 +189,7 @@ async def randfunc(ctx, arg):
                 songs.choice[x] = random.randint(0,len(thislist)-1)
         songs.picked[x] = thislist[songs.choice[x]].gettitle()
 
-    message = await ctx.channel.send(':one: ' + songs.picked[0] + '\n:two: ' + songs.picked[1] + '\n:three: ' + songs.picked[2] + "\n \nThe -append command has been implemented, if it's not working as intended, ping ptar124.")
+    message = await ctx.channel.send(':one: ' + songs.picked[0] + '\n:two: ' + songs.picked[1] + '\n:three: ' + songs.picked[2] + "\n \nBot dev help wanted, ping ptar124 if you have programming experience and want to contribute!")
     
     emojilist = ['1️⃣', '2️⃣', '3️⃣']
     for x in range (3):

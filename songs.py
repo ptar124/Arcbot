@@ -86,6 +86,9 @@ song206 = Song("Bamboo", 3, 6, 9.7, 0)
 song209 = Song("Life is PIANO", 3, 5, 9, 0)
 song218 = Song("Vandalism", 3, 6, 9.7, 0)
 song219 = Song("Turbocharger", 2, 5, 8, 0)
+song226 = Song("False Embellishment", 3, 6, 9, 0)
+song227 = Song("HIVEMIND", 4, 7, 9.7, 0)
+song235 = Song("blue comet", 3, 5, 8, 0)
 
 #MA Pack
 song32 = Song("DataErr0r", 3, 7, 9, 0)
@@ -136,6 +139,8 @@ song207 = Song("GIMME DA BLOOD", 3, 7, 10, 0)
 song208 = Song("Bassline Yatteru? w", 3, 6, 9, 0)
 song220 = Song("THE ULTIMACY", 3, 6, 9.7, 0)
 song221 = Song("REKKA RESONANCE", 5, 8, 10.7, 0)
+song233 = Song("Sheriruth (Laur Remix)", 4, 7, 10, 0)
+song234 = Song("Evening in Scarlet", 4, 7, 9, 0)
 
 #EC Pack
 song12 = Song("cry of viyella", 3, 6, 8, 0)
@@ -235,10 +240,17 @@ song211 = Song("Crystal Gravity", 3, 6, 9 ,0)
 song212 = Song("Far Away Light", 4, 7, 9.7, 0)
 song213 = Song("Löschen", 3, 7, 10, 0)
 song214 = Song("Aegleseeker", 5, 8, 11, 0)
+song225 = Song("Seclusion", 4, 7, 10, 0)
+
 #EO Append (PT)
 song215 = Song("Coastal Highway", 3, 6, 8, 0)
 song216 = Song("ΟΔΥΣΣΕΙΑ", 4, 7, 9, 0)
 song217 = Song("Overwhelm", 5, 8, 10, 0)
+
+#EO Append (LoS)
+song222 = Song("Small Cloud Sugar Candy", 3, 6, 9, 0)
+song223 = Song("AlterAle", 3, 6, 9.7, 0)
+song224 = Song("Divine Light of Myriad", 4, 7, 10.7, 0)
 
 #DH Pack
 song1001 = Song("First Snow", 2, 4, 7, 0)
@@ -258,7 +270,7 @@ song40 = Song("αterlβus", 4, 7, 10, 0)
 song65 = Song("Dream goes on", 1, 5, 7, 0)
 song66 = Song("Journey", 3, 6, 8, 0)
 song67 = Song("Specta", 3, 6, 9, 0)
-song68 = Song("Quon", 4, 6, 9.7, 0)
+song68 = Song("Feryquitous - Quon", 4, 6, 9.7, 0)
 song69 = Song("cyanine", 4, 7, 10, 0)
 
 #TS Pack
@@ -297,14 +309,21 @@ song197 = Song("7thSense", 3, 7, 9.7, 0)
 song198 = Song("Oshama Scramble!", 3, 6, 10, 0)
 song199 = Song("AMAZING MIGHTYYYY!!!!", 4, 7, 10.7, 0)
 
+#wac Pack
+song228 = Song("DJ Noriken - Quon", 2, 5, 8, 10)
+song229 = Song("with U", 2, 6, 9, 0)
+song230 = Song("Let you DIVE! (nitro rmx)", 3, 6, 9, 0)
+song231 = Song("Mazy Metroplex", 3, 7, 9.7, 0)
+song232 = Song("GENOCIDER", 4, 8, 10.7, 0)
+
 choice = [0, 0, 0]
 picked = ["", "", ""]
 
-memoryarchivelist = [song32, song33, song34, song42, song49, song51, song61, song62, song70, song77, song78, song80, song82, song93, song94, song97, song104, song105, song106, song112, song123, song127, song137, song142, song144, song145, song146, song147, song148, song149, song150, song154, song168, song170, song171, song172, song173, song174, song175, song177, song178, song181, song182, song203, song207, song208, song220, song221]
+memoryarchivelist = [song32, song33, song34, song42, song49, song51, song61, song62, song70, song77, song78, song80, song82, song93, song94, song97, song104, song105, song106, song112, song123, song127, song137, song142, song144, song145, song146, song147, song148, song149, song150, song154, song168, song170, song171, song172, song173, song174, song175, song177, song178, song181, song182, song203, song207, song208, song220, song221, song233, song234]
 
 arcaealist = [song1, song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song20, song21, song22, song23, song24, song30, song31, song35, song41, song43, song50, song52, song53, song54, song63, song64, song71, song79, song81, song83, song84, song85, song92, song95, song96, song103, song114, song115, song121, song122, song138, song139, song141, song143, song151, song153]
 
-worldextendlist = [song163, song164, song165, song166, song167, song169, song179, song180, song188, song204, song205, song206, song209, song218, song219]
+worldextendlist = [song163, song164, song165, song166, song167, song169, song179, song180, song188, song204, song205, song206, song209, song218, song219, song226, song227, song235]
 
 blackfatelist = [song156, song157, song158, song159, song160, song161, song162]
 
@@ -333,8 +352,9 @@ crimsonsolacelist = [song25, song26, song27, song28, song29, song140]
 
 #EO Append
 paletapestrylist = [song215, song216, song217]
+lightofsalvationlist = [song222, song223, song224]
 
-esotericorderlist = [song210, song211, song212, song213, song214]
+esotericorderlist = [song210, song211, song212, song213, song214, song225]
 
 dividedheartlist = [song1001, song1002, song1003, song1004, song1005]
 
@@ -353,6 +373,8 @@ tonespherelist = [song98, song99, song100, song101, song102]
 lanotalist = [song65, song66, song67, song68, song69]
 
 dynamixlist = [song36, song37, song38, song39, song40]
+
+waccalist = [song228, song229, song230, song231, song232]
 
 songlist = memoryarchivelist + arcaealist + worldextendlist + blackfatelist + adversepreludelist + luminousskylist + viciouslabyrinthlist + eternalcorelist + ephemeralpagelist + thejourneyonwardslist + sunsetradiancelist + absolutereasonlist + binaryenfoldlist + ambivalentvisionlist + crimsonsolacelist + esotericorderlist + paletapestrylist + dividedheartlist + maimailist + ongekilist + chunithmlist + chunithm2list + groovecoasterlist + tonespherelist + lanotalist + dynamixlist
 
