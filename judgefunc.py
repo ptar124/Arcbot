@@ -103,4 +103,4 @@ async def chunifunc(ctx, s, p, f, l):
     else:
         grade = ":regional_indicator_d:"
 
-    await ctx.channel.send("Chunithm Judge Score:\n" + grade + "  **" + str(total) + "%**")   
+    await ctx.channel.send("Chunithm Judge Score:\n" + grade + "  **" + f'{total:.4f}' + "%**")   
