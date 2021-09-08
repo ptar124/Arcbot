@@ -89,7 +89,7 @@ song219 = Song("Turbocharger", 2, 5, 8, 0)
 song226 = Song("False Embellishment", 3, 6, 9, 0)
 song227 = Song("HIVEMIND", 4, 7, 9.7, 0)
 song235 = Song("blue comet", 3, 5, 8, 0)
-song236 = Song("ENERGY SYNERGY MATRIX", 2, 7, 9, 0)
+song236 = Song("ENERGY SYNERGY MATRIX", 3, 7, 9, 0)
 
 #MA Pack
 song32 = Song("DataErr0r", 3, 7, 9, 0)
