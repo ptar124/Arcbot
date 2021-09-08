@@ -5,7 +5,7 @@ from keep_alive import keep_alive
 from randfunc import randfunc
 from cuslistfunc import cuslistfunc
 from combinefunc import combinefunc
-from judgefunc import hardfunc, exhardfunc
+from judgefunc import hardfunc, exhardfunc, chunifunc
 from helpfunc import helpfunc
 import os
 
