@@ -8,7 +8,7 @@ async def randfunc(ctx, arg):
     if arg == "all":
         print("Random All")
         await ctx.channel.send('Random All Songs')
-        thislist = songs.songlist
+        thislist = songs.dateorderedlist
 
     elif arg == "free":
         print("Random All Free Songs")

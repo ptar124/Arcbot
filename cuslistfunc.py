@@ -207,7 +207,7 @@ async def cuslistfunc(ctx, arg):
     elif arg.startswith("addpack"):
         packname = arg[8:]
         if packname == "all":
-            songs.customlist = songs.customlist + songs.songlist
+            songs.customlist = songs.customlist + songs.dateorderedlist
             print("All Songs added to custom list")
             await ctx.channel.send("All Songs added to custom list")
 
