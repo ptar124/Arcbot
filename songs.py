@@ -146,6 +146,7 @@ song234 = Song("Evening in Scarlet", 4, 7, 9, 0)
 song238 = Song("goldenslaughterer", 4, 6, 9.7, 0)
 song239 = Song("lastendconductor", 3, 7, 9, 10)
 song240 = Song("Redolent Shape", 4, 7, 10, 0)
+song244 = Song("Summer Fireworks of Love", 3, 6, 9.7, 0)
 
 #EC Pack
 song12 = Song("cry of viyella", 3, 6, 8, 0)
