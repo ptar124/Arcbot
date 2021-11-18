@@ -1,5 +1,5 @@
 import songs
-import base64
+import searchfunc
 
 async def cuslistfunc(ctx, arg):
 
@@ -203,6 +203,12 @@ async def cuslistfunc(ctx, arg):
             if havesong == "1":
                 songs.customlist.append(songs.dateorderedlist[i])
 
+    elif arg.startswith("searchsel"):
+        selection = int(arg[10:]) - 1
+        print(selection)
+        print("sel" + songs.searchres[selection].gettitle())
+        songs.customlist.append(songs.searchres[selection])
+        await ctx.channel.send(songs.searchres[selection].gettitle() + " added to custom list")
 
     elif arg.startswith("addpack"):
         packname = arg[8:]
@@ -301,10 +307,20 @@ async def cuslistfunc(ctx, arg):
             print("All Absolute Reason Songs added to custom list")
             await ctx.channel.send("All Absolute Reason Songs added to custom list")
 
-        elif packname == "be":
+        elif packname == "be -append":
             songs.customlist = songs.customlist + songs.binaryenfoldlist
             print("All Binary Enfold Songs added to custom list")
+            await ctx.channel.send("All Binary Enfold Songs added to custom list -append")
+
+        elif packname == "be":
+            songs.customlist = songs.customlist + songs.binaryenfoldlist + songs.sharedtimelist
+            print("All Binary Enfold Songs added to custom list")
             await ctx.channel.send("All Binary Enfold Songs added to custom list")
+
+        elif packname == "st":
+            songs.customlist = songs.customlist + songs.sharedtimelist
+            print("All Shared Time Songs added to custom list")
+            await ctx.channel.send("All Shared Time Songs added to custom list")
 
         elif packname == "av":
             songs.customlist = songs.customlist + songs.ambivalentvisionlist

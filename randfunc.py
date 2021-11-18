@@ -83,7 +83,17 @@ async def randfunc(ctx, arg):
     elif arg == "be":
         print("Random Binary Enfold Songs")
         await ctx.channel.send('Random Binary Enfold Songs')
+        thislist = songs.binaryenfoldlist + songs.sharedtimelist
+
+    elif arg == "be -append":
+        print("Random Binary Enfold Songs")
+        await ctx.channel.send('Random Binary Enfold Songs -append')
         thislist = songs.binaryenfoldlist
+    
+    elif arg == "st" or arg == "be append":
+        print("Random Shared Time Songs")
+        await ctx.channel.send('Random Shared Time Songs')
+        thislist = songs.sharedtimelist
 
     elif arg == "av":
         print("Radom Ambivalent Vision Songs")

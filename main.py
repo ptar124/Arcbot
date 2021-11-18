@@ -7,6 +7,7 @@ from cuslistfunc import cuslistfunc
 from combinefunc import combinefunc
 from judgefunc import hardfunc, exhardfunc, chunifunc
 from helpfunc import helpfunc
+from searchfunc import searchfunc
 import os
 
 #bot = discord.Client()
@@ -30,6 +31,10 @@ async def cuslist(ctx, *, arg):
 @bot.command()
 async def combine(ctx, code1, op, code2):
   await combinefunc(ctx, code1, op, code2)
+
+@bot.command()
+async def search(ctx, query):
+  await searchfunc(ctx, query)
 
 @bot.command()
 async def hard(ctx, s, p, f, l):
