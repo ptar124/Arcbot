@@ -32,14 +32,14 @@ song7 = Song("Shades of Light in a Transcendent Realm", 3, 6, 8, 0)
 song8 = Song("Babaroque", 3, 6, 8, 0)
 song9 = Song("Lost Civilisation", 4, 7, 9, 9.7)
 song10 = Song("GOODTEK (Arcaea Edit)", 4, 6, 9, 9.7)
-song11 = Song("qualia -ideaesthesia-", 4, 7, 9, 0)
+song11 = Song("qualia -ideaesthesia-", 4, 7, 9, 9.7)
 song20 = Song("Dement ~after legend~", 3, 6, 7, 9.7)
 song21 = Song("Dandelion", 2, 6, 8, 0)
 song22 = Song("Infinity Heaven", 1, 5, 7, 9)
 song23 = Song("Anökumene", 2, 6, 9, 0)
 song24 = Song("Brand new world", 2, 4, 7, 0)
 song30 = Song("Chronostasis", 3, 7, 9, 0)
-song31 = Song("Kanagawa Cyber Culvert", 1, 5, 9, 0)
+song31 = Song("Kanagawa Cyber Culvert", 1, 5, 9, 9.7)
 song35 = Song("Clotho and the stargazer", 2, 5, 7, 0)
 song41 = Song("Ignotus", 3, 6, 9, 0)
 song43 = Song("Harutopia -Utopia of Spring-", 1, 4, 8, 0)
@@ -155,7 +155,7 @@ song14 = Song("memoryfactory.lzh", 2, 5, 8, 0)
 song15 = Song("Relentless", 4, 6, 8, 0)
 song16 = Song("Lumia", 2, 5, 8, 9)
 song17 = Song("Essence of Twilight", 4, 7, 9, 0)
-song18 = Song("PRAGMATISM", 4, 8, 10, 0)
+song18 = Song("PRAGMATISM", 4, 8, 10, 11)
 song19 = Song("Sheriruth", 5, 7, 10, 0)
 song113 = Song("Solitary Dream", 4, 7, 8, 0)
 
@@ -178,7 +178,7 @@ song91 = Song("Fracture Ray", 6, 9, 11, 0)
 #AP Pack
 song128 = Song("Particle Arts", 3, 6, 8, 0)
 song129 = Song("Vindication", 4, 6, 9, 0)
-song130 = Song("Heavensdoor", 4, 7, 9.7, 0)
+song130 = Song("Heavensdoor", 4, 7, 9.7, 10.7)
 song131 = Song("Ringed Genesis", 5, 8, 10.7, 0)
 song152 = Song("BLRINK", 3, 7, 9.7, 0)
 
@@ -220,7 +220,7 @@ song242 = Song("Ascent", 3, 6, 9.7, 0)
 song243 = Song("Live Fast Die Young", 4, 8, 10, 0)
 
 #AR Pack
-song116 = Song("Antithese", 2, 5, 8, 0)
+song116 = Song("Antithese", 2, 5, 8, 9)
 song117 = Song("Black Territory", 3, 7, 9.7, 0)
 song118 = Song("Corruption", 3, 6, 9.7, 0)
 song119 = Song("Vicious Heroism", 4, 7, 10, 0)
@@ -264,11 +264,11 @@ song223 = Song("AlterAle", 3, 6, 9.7, 0)
 song224 = Song("Divine Light of Myriad", 4, 7, 10.7, 0)
 
 #DH Pack
-song1001 = Song("First Snow", 2, 4, 7, 0)
-song1002 = Song("Blocked Library", 3, 6, 9, 0)
-song1003 = Song("Blue Rose", 2, 5, 9, 0)
-song1004 = Song("nέo κósmo", 4, 7, 9.7, 0)
-song1005 = Song("Lightning Screw", 4, 7, 10, 0)
+song245 = Song("First Snow", 2, 4, 7, 0)
+song246 = Song("Blocked Library", 3, 6, 9, 0)
+song247 = Song("Blue Rose", 2, 5, 9, 0)
+song248 = Song("nέo κósmo", 4, 7, 9.7, 0)
+song249 = Song("Lightning Screw", 4, 7, 10, 0)
 
 #DNX Pack
 song36 = Song("Moonlight of Sand Castle", 1, 5, 7, 0)
@@ -369,7 +369,7 @@ lightofsalvationlist = [song222, song223, song224]
 
 esotericorderlist = [song210, song211, song212, song213, song214, song225]
 
-dividedheartlist = [song1001, song1002, song1003, song1004, song1005]
+dividedheartlist = [song245, song246, song247, song248, song249]
 
 maimailist = [song196, song197, song198, song199]
 
@@ -395,4 +395,4 @@ customlist = []
 
 searchres = []
 
-dateorderedlist = [song1, song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song12, song13, song14, song15, song16, song17, song18, song19, song20, song21, song22, song23, song24, song25, song26, song27, song28, song29, song30, song31, song32, song33, song34, song35, song36, song37, song38, song39, song40, song41, song42, song43, song44, song45, song46, song47, song48, song49, song50, song51, song52, song53, song54, song55, song56, song57, song58, song59, song60, song61, song62, song63, song64, song65, song66, song67, song68, song69, song70, song71, song72, song73, song74, song75, song76, song77, song78, song79, song80, song81, song82, song83, song84, song85, song86, song87, song88, song89, song90, song91, song92, song93, song94, song95, song96, song97, song98, song99, song100, song101, song102, song103, song104, song105, song106, song107, song108, song109, song110, song111, song112, song113, song114, song115, song116, song117, song118, song119, song120, song121, song122, song123, song124, song125, song126, song127, song128, song129, song130, song131, song132, song133, song134, song135, song136, song137, song138, song139, song140, song141, song142, song143, song144, song145, song146, song147, song148, song149, song150, song151, song152, song153, song154, song155, song156, song157, song158, song159, song160, song161, song162, song163, song164, song165, song166, song167, song168, song169, song170, song171, song172, song173, song174, song175, song176, song177, song178, song179, song180, song181, song182, song183, song184, song185, song186, song187, song188, song189, song190, song191, song192, song193, song194, song195, song196, song197, song198, song199, song200, song201, song202, song203, song204, song205, song206, song207, song208, song209, song210, song211, song212, song213, song214, song215, song216, song217, song218, song219, song220, song221, song222, song223, song224, song225, song226, song227, song228, song229, song230, song231, song232, song233, song234, song235, song236, song237, song238, song239, song240, song241, song242, song243]
+dateorderedlist = [song1, song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song12, song13, song14, song15, song16, song17, song18, song19, song20, song21, song22, song23, song24, song25, song26, song27, song28, song29, song30, song31, song32, song33, song34, song35, song36, song37, song38, song39, song40, song41, song42, song43, song44, song45, song46, song47, song48, song49, song50, song51, song52, song53, song54, song55, song56, song57, song58, song59, song60, song61, song62, song63, song64, song65, song66, song67, song68, song69, song70, song71, song72, song73, song74, song75, song76, song77, song78, song79, song80, song81, song82, song83, song84, song85, song86, song87, song88, song89, song90, song91, song92, song93, song94, song95, song96, song97, song98, song99, song100, song101, song102, song103, song104, song105, song106, song107, song108, song109, song110, song111, song112, song113, song114, song115, song116, song117, song118, song119, song120, song121, song122, song123, song124, song125, song126, song127, song128, song129, song130, song131, song132, song133, song134, song135, song136, song137, song138, song139, song140, song141, song142, song143, song144, song145, song146, song147, song148, song149, song150, song151, song152, song153, song154, song155, song156, song157, song158, song159, song160, song161, song162, song163, song164, song165, song166, song167, song168, song169, song170, song171, song172, song173, song174, song175, song176, song177, song178, song179, song180, song181, song182, song183, song184, song185, song186, song187, song188, song189, song190, song191, song192, song193, song194, song195, song196, song197, song198, song199, song200, song201, song202, song203, song204, song205, song206, song207, song208, song209, song210, song211, song212, song213, song214, song215, song216, song217, song218, song219, song220, song221, song222, song223, song224, song225, song226, song227, song228, song229, song230, song231, song232, song233, song234, song235, song236, song237, song238, song239, song240, song241, song242, song243, song244, song245, song246, song247, song248, song249]
